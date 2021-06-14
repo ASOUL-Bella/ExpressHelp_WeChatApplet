@@ -1,0 +1,36 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd page__bd_spacing">
+    <view style="padding-top:0" class="weui-form">
+      <view class="weui-form__control-area">
+        <view class="weui-cells__group weui-cells__group_form">
+          <view class="weui-cells">
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label">意见类型</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="bindPicker1Change" range="{{array1}}">
+                  <view style="padding-left:100rpx" class="weui-select">{{array1[value1]}}</view>
+                </picker>
+              </view>
+            </view>
+            <view style="color:black;font-size:33rpx" class="weui-cells__title">意见内容</view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell_feedback">
+                <view class="weui-cell__bd_feedback">
+                  <textarea class="weui-textarea" placeholder="在这里写下意见内容" placeholder-class="weui-input__placeholder"
+                    rows="3">
+                  </textarea>
+                  <view class="weui-textarea-counter"><span>0</span>/100</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="margin-top:20rpx" class="weui-form__opr-area">
+        <button class="weui-btn weui-btn_primary">提交</button>
+      </view>
+    </view>
+  </view>
+</view>

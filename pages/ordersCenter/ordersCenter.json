@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",   
+  "navigationBarTitleText": "订单中心",  
+  "navigationBarTextStyle": "black",    
+  "usingComponents": {}
+}

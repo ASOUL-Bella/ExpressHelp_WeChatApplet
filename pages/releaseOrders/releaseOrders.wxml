@@ -1,0 +1,88 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd page__bd_spacing">
+    <form bindsubmit="orderSubmit" style="padding-top:0" class="weui-form">
+      <view class="weui-form__control-area">
+        <view class="weui-cells__group weui-cells__group_form">
+          <view class="weui-cells">
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label">快件类型</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker name="edType" bindchange="bindPicker1Change" value="{{array1[value1]}}" range="{{array1}}">
+                  <view style="padding-left:100rpx" class="weui-select">{{array1[value1]}}</view>
+                </picker>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label">快件重量</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker name="edWeight" bindchange="bindPicker2Change" value="{{array2[value2]}}" range="{{array2}}">
+                  <view style="padding-left:100rpx" class="weui-select">{{array2[value2]}}</view>
+                </picker>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">取件地址</label></view>
+              <view class="weui-cell__bd">
+                <input name="pickupAdd" class="weui-input" placeholder="请填写详细地址"
+                  placeholder-class="weui-input__placeholder" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">收件地址</label></view>
+              <view class="weui-cell__bd">
+                <input name="receAdd" class="weui-input" placeholder="请填写详细地址"
+                  placeholder-class="weui-input__placeholder" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">取件信息</label></view>
+              <view class="weui-cell__bd">
+                <input name="pickupInfo" class="weui-input" placeholder="请填写取件码等信息"
+                  placeholder-class="weui-input__placeholder" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">限定时间</label></view>
+              <view class="weui-cell__bd">
+                <input name="orderLimitTime" class="weui-input" placeholder="请填写订单限定时间"
+                  placeholder-class="weui-input__placeholder" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">悬赏金额</label></view>
+              <view class="weui-cell__bd">
+                <input name="orderAmount" class="weui-input" placeholder="请填写整数，单位元"
+                  placeholder-class="weui-input__placeholder" />
+              </view>
+            </view>
+            <view style="color:black;font-size:33rpx" class="weui-cells__title">订单备注</view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">
+                  <textarea name="remarks" style="height:150rpx" class="weui-textarea" placeholder="在这里写下订单备注"
+                    placeholder-class="weui-input__placeholder" rows="3">
+                  </textarea>
+                  <view class="weui-textarea-counter"><span>0</span>/100</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="margin-top:20rpx" class="weui-form__opr-area">
+        <button form-type="submit" class="weui-btn weui-btn_primary">发布</button>
+      </view>
+      <view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+        <view class="weui-mask_transparent"></view>
+        <view class="weui-toast">
+          <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+          <view class="weui-toast__content">发布成功</view>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,119 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__hd">
+    <image class="image_radius" src="{{wxuserInfo.avatarUrl}}" />
+    <view class="page__title">{{wxuserInfo.nickName}}</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells__top weui-cells_after-title">
+      <navigator url="/pages/ordersCenter/ordersCenter" class="weui-cell__top weui-cell_access"
+        hover-class="weui-cell_active">
+        <view style="font-weight:bold;" class="weui-cell__bd">我的订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">查看全部</view>
+      </navigator>
+    </view>
+    <view class="weui-flex">
+      <navigator url="/pages/ordersCenter/ordersCenter?index=1">
+        <view class="weui-flex__item">
+          <image src="/images/dfk.png"></image>
+          <view>待支付</view>
+        </view>
+      </navigator>
+      <navigator url="/pages/ordersCenter/ordersCenter?index=2">
+        <view class="weui-flex__item">
+          <image src="/images/djd.png"></image>
+          <view>待接取</view>
+        </view>
+      </navigator>
+      <navigator url="/pages/ordersCenter/ordersCenter?index=3">
+        <view class="weui-flex__item">
+          <image src="/images/dsd.png"></image>
+          <view>待送达</view>
+        </view>
+      </navigator>
+      <navigator url="/pages/ordersCenter/ordersCenter?index=4">
+        <view class="weui-flex__item">
+          <image src="/images/ywc.png"></image>
+          <view>已完成</view>
+        </view>
+      </navigator>
+      <navigator url="/pages/ordersCenter/ordersCenter?index=5">
+        <view class="weui-flex__item">
+          <image src="/images/yqx.png"></image>
+          <view>已取消</view>
+        </view>
+      </navigator>
+    </view>
+    <block wx:if="{{myuserInfo.userType != '管理员'}}">
+      <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/myinfo/myinfo?openType=modify" class="weui-cell weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/wdxx.png"></image>
+          </view>
+          <view class="weui-cell__bd">我的信息</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="pages/index/index" class="weui-cell weui-cell_example weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/wddz.png"></image>
+          </view>
+          <view class="weui-cell__bd">我的地址</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="pages/index/index" class="weui-cell weui-cell_example weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/yjtx.png"></image>
+          </view>
+          <view class="weui-cell__bd">佣金提现</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/register/register" class="weui-cell weui-cell_example weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/sqjd.png"></image>
+          </view>
+          <view class="weui-cell__bd">申请接单</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="pages/index/index" class="weui-cell weui-cell_example weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/jfgl.png"></image>
+          </view>
+          <view class="weui-cell__bd">积分管理</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/feedback/feedback" class="weui-cell weui-cell_example weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/yjfk.png"></image>
+          </view>
+          <view class="weui-cell__bd">意见反馈</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/myinfo/myinfo?openType=modify" class="weui-cell weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/yjfk.png"></image>
+          </view>
+          <view class="weui-cell__bd">反馈处理</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/myinfo/myinfo?openType=modify" class="weui-cell weui-cell_access"
+          hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="/images/sqjd.png"></image>
+          </view>
+          <view class="weui-cell__bd">注册审核</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+</view>

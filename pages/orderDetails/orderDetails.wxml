@@ -1,0 +1,179 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd page__bd_spacing">
+    <view style="padding-top:0" class="weui-form">
+      <view class="weui-form__control-area">
+        <view class="weui-cells__group weui-cells__group_form">
+          <view class="weui-cells">
+            <view bindtap="userTap" data-username="{{order.customerName}}" class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">客户名称</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.customerName}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">快件类型</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.edType}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">快件重量</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.edWeight}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">取件地址</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.pickupAdd}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">收件地址</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.receAdd}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">取件信息</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.pickupInfo}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">发布时间</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.orderReleaseTime}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">限定时间</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.orderLimitTime}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">悬赏金额</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.orderAmount}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">订单备注</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.remarks}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">订单状态</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.orderStatus}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view bindtap="userTap" data-username="{{order.customerName}}" class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">代取用户</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.employeeName}}" disabled />
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells weui-cells_form">
+              <view class="weui-cell weui-cell_active weui-cell_disabled">
+                <view class="weui-cell__hd">
+                  <label class="weui-label">完成时间</label>
+                </view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" value="{{order.orderFulfilTime}}" disabled />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="margin-top:80rpx" class="weui-form__opr-area">
+        <button bindtap="takeOrder" wx:if="{{order.orderStatus == '待接取' & order.customerName != userName}}" class="weui-btn weui-btn_primary">接取</button>
+        <button bindtap="cancelOrder" wx:if="{{order.orderStatus == '待接取' & order.customerName == userName}}" class="weui-btn weui-btn_primary">取消订单</button>
+        <button bindtap="confirmOrder" wx:if="{{order.orderStatus == '待送达' & order.customerName == userName}}"
+          class="weui-btn weui-btn_primary">确认送达</button>
+        <button bindtap="payOrder" wx:if="{{order.orderStatus == '待支付'}}" class="weui-btn weui-btn_primary">支付</button>
+        <button bindtap="evaluateOrder" wx:if="{{order.orderStatus == '已完成'}}"
+          class="weui-btn weui-btn_primary">去评价</button>
+      </view>
+      <view class="fadeIn {{hideToast1 ? 'fadeOut' : ''}}" wx:if="{{toast1}}">
+        <view class="weui-mask_transparent"></view>
+        <view class="weui-toast">
+          <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+          <view class="weui-toast__content">接单成功</view>
+        </view>
+      </view>
+      <view class="fadeIn {{hideToast2 ? 'fadeOut' : ''}}" wx:if="{{toast2}}">
+        <view class="weui-mask_transparent"></view>
+        <view class="weui-toast">
+          <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+          <view class="weui-toast__content">确认成功</view>
+        </view>
+      </view>
+      <view class="fadeIn {{hideToast3 ? 'fadeOut' : ''}}" wx:if="{{toast3}}">
+        <view class="weui-mask_transparent"></view>
+        <view class="weui-toast">
+          <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+          <view class="weui-toast__content">支付成功</view>
+        </view>
+      </view>
+      <view class="fadeIn {{hideToast4 ? 'fadeOut' : ''}}" wx:if="{{toast4}}">
+        <view class="weui-mask_transparent"></view>
+        <view class="weui-toast">
+          <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+          <view class="weui-toast__content">取消成功</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

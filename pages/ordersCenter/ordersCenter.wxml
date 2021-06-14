@@ -1,0 +1,163 @@
+<view class="order-container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}"
+        data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="order-content-wrapper">
+    <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+      <swiper-item wx:for="{{navbarTitle}}" wx:key="index">
+        <scroll-view style="height:1100rpx" scroll-y="{{true}}">
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 0 & (order.customerName == userInfo.nickName | order.employeeName == userInfo.nickName)}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 1 & order.orderStatus == '待支付' & order.customerName == userInfo.nickName}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 2 & order.orderStatus == '待接取' & order.customerName == userInfo.nickName}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 3 & order.orderStatus == '待送达' & (order.customerName == userInfo.nickName | order.employeeName == userInfo.nickName)}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 4 & order.orderStatus == '已完成' & (order.customerName == userInfo.nickName | order.employeeName == userInfo.nickName)}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+          <block wx:for='{{ordersList}}' wx:for-item="order" wx:key="orderId" wx:if="{{navbarActiveIndex == 5 & order.orderStatus == '已取消' & (order.customerName == userInfo.nickName | order.employeeName == userInfo.nickName)}}">
+            <view class="weui-panel">
+              <navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+                <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_text">
+                    <h4 class="weui-media-box__title">{{order.edType}}</h4>
+                    <view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
+                    <view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+                    <view class="weui-media-box__info">
+                      <view class="weui-media-box__info__meta">{{order.customerName}}</view>
+                      <view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
+                      <view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
+                      <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+                        {{"悬赏金额:"+order.orderAmount}}
+                      </view>
+                    </view>
+                    <image
+                      style="position: absolute; width: 154rpx; height: 138rpx; display: block; box-sizing: border-box; left: 540rpx; top: 38rpx"
+                      src="/images/xs.png" />
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
