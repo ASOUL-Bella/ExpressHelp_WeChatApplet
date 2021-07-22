@@ -1,0 +1,2 @@
+# ExpressHelp_WeChatApplet
+这是高校校内快递代取系统的微信小程序代码，使用微信官方的weui组件编写，通过AJAX申请后端JSON数据
