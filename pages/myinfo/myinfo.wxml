@@ -7,8 +7,8 @@
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">学号/工号</label></view>
               <view class="weui-cell__bd">
-                <input name="userId" placeholder="请填写学号" placeholder-class="weui-input__placeholder" class="weui-input"
-                  value="{{userInfo.userId}}" />
+                <input name="stuNum" placeholder="请填写学号" placeholder-class="weui-input__placeholder" class="weui-input"
+                  value="{{userInfo.stuNum}}" />
               </view>
             </view>
             <view class="weui-cells weui-cells_form">
@@ -17,14 +17,14 @@
                   <label class="weui-label">用户类型</label>
                 </view>
                 <view class="weui-cell__bd">
-                  <input name="userType" class="weui-input" value="{{userInfo.userType}}" disabled />
+                  <input name="type" class="weui-input" value="{{userInfo.type}}" disabled />
                 </view>
               </view>
             </view>
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">用户名</label></view>
               <view class="weui-cell__bd">
-                <input name="userName" class="weui-input" value="{{userInfo.userName}}" />
+                <input name="nickName" class="weui-input" value="{{userInfo.nickName}}" />
               </view>
             </view>
             <view class="weui-cell weui-cell_active">
@@ -37,8 +37,8 @@
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">手机号</label></view>
               <view class="weui-cell__bd">
-                <input name="phoneNum" placeholder="请填写手机号" placeholder-class="weui-input__placeholder"
-                  class="weui-input" value="{{userInfo.phoneNum}}" />
+                <input name="phone" placeholder="请填写手机号" placeholder-class="weui-input__placeholder"
+                  class="weui-input" value="{{userInfo.phone}}" />
               </view>
             </view>
             <view class="weui-cells weui-cells_form">
@@ -57,7 +57,7 @@
                   <label class="weui-label">信用分</label>
                 </view>
                 <view class="weui-cell__bd">
-                  <input name="points" class="weui-input" value="100" disabled />
+                  <input name="creditPoints" class="weui-input" value="{{userInfo.creditPoints}}" disabled />
                 </view>
               </view>
             </view>

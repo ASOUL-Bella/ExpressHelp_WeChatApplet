@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d1d9cad-6c9d-4cd3-bd27-1942cd6f570f" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mine/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/myinfo/myinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/myinfo/myinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/myinfo/myinfo.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/myinfo/myinfo.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/releaseOrders/releaseOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/releaseOrders/releaseOrders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/releaseOrders/releaseOrders.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/releaseOrders/releaseOrders.wxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Java\mavenRepository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../Maven/apache-maven-3.8.1" />
+        <option name="showDialogWithAdvancedSettings" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1uwj8GIDGBtusUuLz2x7ZpbpoEx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="1d1d9cad-6c9d-4cd3-bd27-1942cd6f570f" name="默认变更列表" comment="" />
+      <created>1625583385385</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625583385385</updated>
+      <workItem from="1625583389369" duration="4634000" />
+      <workItem from="1625717413062" duration="26328000" />
+      <workItem from="1625886695278" duration="2876000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

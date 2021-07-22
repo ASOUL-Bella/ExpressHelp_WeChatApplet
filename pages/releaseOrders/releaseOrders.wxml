@@ -9,7 +9,7 @@
                 <label class="weui-label">快件类型</label>
               </view>
               <view class="weui-cell__bd">
-                <picker name="edType" bindchange="bindPicker1Change" value="{{array1[value1]}}" range="{{array1}}">
+                <picker name="expressType" bindchange="bindPicker1Change" value="{{array1[value1]}}" range="{{array1}}">
                   <view style="padding-left:100rpx" class="weui-select">{{array1[value1]}}</view>
                 </picker>
               </view>
@@ -19,7 +19,7 @@
                 <label class="weui-label">快件重量</label>
               </view>
               <view class="weui-cell__bd">
-                <picker name="edWeight" bindchange="bindPicker2Change" value="{{array2[value2]}}" range="{{array2}}">
+                <picker name="expressWeight" bindchange="bindPicker2Change" value="{{array2[value2]}}" range="{{array2}}">
                   <view style="padding-left:100rpx" class="weui-select">{{array2[value2]}}</view>
                 </picker>
               </view>
@@ -27,14 +27,14 @@
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">取件地址</label></view>
               <view class="weui-cell__bd">
-                <input name="pickupAdd" class="weui-input" placeholder="请填写详细地址"
+                <input name="pickupAddress" class="weui-input" placeholder="请填写详细地址"
                   placeholder-class="weui-input__placeholder" />
               </view>
             </view>
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">收件地址</label></view>
               <view class="weui-cell__bd">
-                <input name="receAdd" class="weui-input" placeholder="请填写详细地址"
+                <input name="receAddress" class="weui-input" placeholder="请填写详细地址"
                   placeholder-class="weui-input__placeholder" />
               </view>
             </view>
@@ -48,14 +48,14 @@
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">限定时间</label></view>
               <view class="weui-cell__bd">
-                <input name="orderLimitTime" class="weui-input" placeholder="请填写订单限定时间"
+                <input name="limitTime" class="weui-input" placeholder="请填写订单限定时间"
                   placeholder-class="weui-input__placeholder" />
               </view>
             </view>
             <view class="weui-cell weui-cell_active">
               <view class="weui-cell__hd"><label class="weui-label">悬赏金额</label></view>
               <view class="weui-cell__bd">
-                <input name="orderAmount" class="weui-input" placeholder="请填写整数，单位元"
+                <input name="amount" class="weui-input" placeholder="请填写整数，单位元"
                   placeholder-class="weui-input__placeholder" />
               </view>
             </view>

@@ -1,7 +1,7 @@
 <view class="page" data-weui-theme="{{theme}}">
   <view class="page__hd">
-    <image class="image_radius" src="{{wxuserInfo.avatarUrl}}" />
-    <view class="page__title">{{wxuserInfo.nickName}}</view>
+    <image class="image_radius" src="{{userProfile.avatarUrl}}" />
+    <view class="page__title">{{userInfo.nickName}}</view>
   </view>
   <view class="page__bd">
     <view class="weui-cells__top weui-cells_after-title">

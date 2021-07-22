@@ -1,14 +1,15 @@
+
 const app = getApp()
 const util = require('../../utils/util.js')
+const common = require('../../utils/common_order.js')
 
 Page({
     mixins: [require('../../mixin/themeChanged')],
     data: {
         order: "",
         orderId: "",
+        fulfilTime: null,
         userName: "",
-        fulfilTime: "",
-
         toast1: false,
         hideToast1: false,
         toast2: false,
@@ -20,10 +21,9 @@ Page({
     },
     onLoad: function (options) {
         this.setData({
-                orderId: options.orderId,
-                userName: app.globalData.userInfo.nickName
-            }),
-            this.getOrderDetails(options)
+            orderId: options.orderId,
+        }),
+            this.getOrderDetails()
 
     },
     openToast1: function () {
@@ -90,21 +90,21 @@ Page({
             }, 300);
         }, 3000);
     },
-    getOrderDetails(e) {
+    getOrderDetails() {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/OrderDetailsServlet',
-            method: 'get',
+            url: 'http://localhost:8080/express_help/order/' + that.data.orderId,
+            method: 'GET',
             dataType: 'json',
             data: {
-                orderId: that.data.orderId
             },
             header: {
                 'content-type': 'application/json' // 默认值
             },
             success(res) {
                 that.setData({
-                    order: res.data
+                    order: res.data,
+                    userName: app.globalData.userInfo.nickName
                 })
             }
         })
@@ -112,12 +112,24 @@ Page({
     takeOrder(e) {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/TakeOrderServlet',
-            method: 'get',
+            url: 'http://localhost:8080/express_help/order/' + that.data.orderId,
+            method: 'PUT',
             dataType: 'json',
             data: {
-                orderId: that.data.orderId,
-                userName: that.data.userName
+                id: that.data.order.id,
+                customerName: that.data.order.customerName,
+                expressType: that.data.order.expressType,
+                expressWeight: that.data.order.expressWeight,
+                pickupAddress: that.data.order.pickupAddress,
+                receAddress: that.data.order.receAddress,
+                pickupInfo: that.data.order.pickupInfo,
+                releaseTime: that.data.order.releaseTime,
+                limitTime: that.data.order.limitTime,
+                amount: that.data.order.amount,
+                remarks: that.data.order.remarks,
+                status: "代送达",
+                employeeName: that.data.userName,
+                fulfilTime: that.data.order.fulfilTime
             },
             header: {
                 'content-type': 'application/json' // 默认值
@@ -126,6 +138,7 @@ Page({
                 that.setData({
                     order: res.data
                 })
+                that.getOrderDetails()
             }
         })
         that.openToast1()
@@ -133,11 +146,24 @@ Page({
     cancelOrder(e) {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/CancelOrderServlet',
-            method: 'get',
+            url: 'http://localhost:8080/express_help/order/' + that.data.orderId,
+            method: 'PUT',
             dataType: 'json',
             data: {
-                orderId: that.data.orderId
+                id: that.data.order.id,
+                customerName: that.data.order.customerName,
+                expressType: that.data.order.expressType,
+                expressWeight: that.data.order.expressWeight,
+                pickupAddress: that.data.order.pickupAddress,
+                receAddress: that.data.order.receAddress,
+                pickupInfo: that.data.order.pickupInfo,
+                releaseTime: that.data.order.releaseTime,
+                limitTime: that.data.order.limitTime,
+                amount: that.data.order.amount,
+                remarks: that.data.order.remarks,
+                status: "已取消",
+                employeeName: that.data.userName,
+                fulfilTime: that.data.order.fulfilTime
             },
             header: {
                 'content-type': 'application/json' // 默认值
@@ -146,6 +172,7 @@ Page({
                 that.setData({
                     order: res.data
                 })
+                that.getOrderDetails()
             }
         })
         that.openToast4()
@@ -153,13 +180,24 @@ Page({
     confirmOrder(e) {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/ConfirmOrderServlet',
-            method: 'get',
+            url: 'http://localhost:8080/express_help/order/' + that.data.orderId,
+            method: 'PUT',
             dataType: 'json',
             data: {
-                orderId: that.data.orderId,
-                userName: that.data.order.employeeName,
-                orderFulfilTime: util.formatTime(new Date()),
+                id: that.data.order.id,
+                customerName: that.data.order.customerName,
+                expressType: that.data.order.expressType,
+                expressWeight: that.data.order.expressWeight,
+                pickupAddress: that.data.order.pickupAddress,
+                receAddress: that.data.order.receAddress,
+                pickupInfo: that.data.order.pickupInfo,
+                releaseTime: that.data.order.releaseTime,
+                limitTime: that.data.order.limitTime,
+                amount: that.data.order.amount,
+                remarks: that.data.order.remarks,
+                status: "待支付",
+                employeeName: that.data.userName,
+                fulfilTime: that.data.order.fulfilTime
             },
             header: {
                 'content-type': 'application/json' // 默认值
@@ -168,6 +206,7 @@ Page({
                 that.setData({
                     order: res.data
                 })
+                that.getOrderDetails()
             }
         })
         that.openToast2()
@@ -175,11 +214,24 @@ Page({
     payOrder(e) {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/PayOrderServlet',
-            method: 'get',
+            url: 'http://localhost:8080/express_help/order/' + that.data.orderId,
+            method: 'PUT',
             dataType: 'json',
             data: {
-                orderId: that.data.orderId
+                id: that.data.order.id,
+                customerName: that.data.order.customerName,
+                expressType: that.data.order.expressType,
+                expressWeight: that.data.order.expressWeight,
+                pickupAddress: that.data.order.pickupAddress,
+                receAddress: that.data.order.receAddress,
+                pickupInfo: that.data.order.pickupInfo,
+                releaseTime: that.data.order.releaseTime,
+                limitTime: that.data.order.limitTime,
+                amount: that.data.order.amount,
+                remarks: that.data.order.remarks,
+                status: "已完成",
+                employeeName: that.data.userName,
+                fulfilTime: that.data.order.fulfilTime
             },
             header: {
                 'content-type': 'application/json' // 默认值
@@ -188,6 +240,7 @@ Page({
                 that.setData({
                     order: res.data
                 })
+                that.getOrderDetails()
             }
         })
         that.openToast3()
@@ -195,15 +248,15 @@ Page({
     evaluateOrder(e) {
         var that = this;
         wx.navigateTo({
-            url: '/pages/orderEvaluation/orderEvaluation?orderId=' + that.data.orderId,
-            success: function (res) {}
+            url: '/pages/orderEvaluation/orderEvaluation?orderId=' + that.data.order.id,
+            success: function (res) { }
         })
     },
     userTap(e) {
         var that = this;
         wx.navigateTo({
             url: '/pages/myinfo/myinfo?userName=' + e.currentTarget.dataset.username + '&openType=readonly',
-            success: function (res) {}
+            success: function (res) { }
         })
     }
 });

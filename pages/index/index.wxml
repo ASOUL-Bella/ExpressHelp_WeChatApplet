@@ -11,7 +11,7 @@
 						<image class="weui-media-box__thumb" src="/images/kddq.png" alt></image>
 					</view>
 					<view class="weui-media-box__bd">
-						<h4 class="weui-media-box__title">快递代取</h4>
+						<view class="weui-media-box__title">快递代取</view>
 						<view class="weui-media-box__desc">点击这里发布快递代取订单</view>
 					</view>
 				</navigator>

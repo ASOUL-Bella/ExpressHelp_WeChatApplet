@@ -40,23 +40,27 @@ Page({
     orderSubmit(e) {
         var that = this;
         wx.request({
-            url: 'http://localhost:8080/GraduationDesign/ReleaseOrdersServlet',
+            url: 'http://localhost:8080/express_help/order',
+            method: "POST",
             data: {
-                userName: app.globalData.userInfo.nickName,
-                edType: e.detail.value.edType,
-                edWeight: e.detail.value.edWeight,
-                pickupAdd: e.detail.value.pickupAdd,
-                receAdd: e.detail.value.receAdd,
+                customerName: app.globalData.userInfo.nickName,
+                expressType: e.detail.value.expressType,
+                expressWeight: e.detail.value.expressWeight,
+                pickupAddress: e.detail.value.pickupAddress,
+                receAddress: e.detail.value.receAddress,
                 pickupInfo: e.detail.value.pickupInfo,
-                orderReleaseTime: util.formatTime(new Date()),
-                orderLimitTime: e.detail.value.orderLimitTime,
-                orderAmount: e.detail.value.orderAmount,
+                releaseTime: Date.now(),
+                limitTime: e.detail.value.limitTime,
+                amount: e.detail.value.amount,
                 remarks: e.detail.value.remarks,
+                status: "待接取",
+                employeeName: "暂无",
+                fulfilTime: null
             },
             header: {
                 'content-type': 'application/json' // 默认值
             },
-            success(res) {}
+            success(res) { }
         })
         that.openToast()
     }

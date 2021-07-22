@@ -4,19 +4,19 @@
 		<view class="page__desc">订单都采用抢单方式先到先得</view>
 	</view>
 	<view class="page__bd">
-		<block wx:for='{{ordersList}}' wx:for-item="order" wx:if="{{order.orderStatus == '待接取'}}" wx:key="orderId">
+		<block wx:for='{{ordersList}}' wx:for-item="order" wx:if="{{order.status == '待接取'}}" wx:key="orderId">
 			<view class="weui-panel">
-				<navigator url="/pages/orderDetails/orderDetails?orderId={{order.orderId}}">
+				<navigator url="/pages/orderDetails/orderDetails?orderId={{order.id}}">
 					<view class="weui-panel__bd">
 						<view class="weui-media-box weui-media-box_text">
-							<h4 class="weui-media-box__title">{{order.edType}}</h4>
-							<view class="weui-media-box__desc">{{order.orderLimitTime+"，送到"+order.pickupAdd}}</view>
-							<view class="weui-media-box__desc">{{order.receAdd+"，"+order.pickupInfo}}</view>
+							<h4 class="weui-media-box__title">{{order.expressType}}</h4>
+							<view class="weui-media-box__desc">{{order.limitTime+"，送到"+order.pickupAddress}}</view>
+							<view class="weui-media-box__desc">{{order.receAddress+"，"+order.pickupInfo}}</view>
 							<view class="weui-media-box__info">
 								<view class="weui-media-box__info__meta">{{order.customerName}}</view>
-								<view class="weui-media-box__info__meta">{{order.orderReleaseTime}}</view>
-								<view class="weui-media-box__info__meta">{{"总重"+order.edWeight}}</view>
-								<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{"悬赏金额:"+order.orderAmount}}
+								<view class="weui-media-box__info__meta">{{order.releaseTime}}</view>
+								<view class="weui-media-box__info__meta">{{"总重"+order.expressWeight}}</view>
+								<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{"悬赏金额:"+order.amount}}
 								</view>
 							</view>
 							<image
